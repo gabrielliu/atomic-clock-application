@@ -1,11 +1,17 @@
 import asyncio
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from .ntp_sync import NTPSynchronizer
 from .time_utils import TimeUtils
 import threading
 import time
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 app = FastAPI()
 
@@ -64,6 +70,7 @@ async def websocket_endpoint(websocket: WebSocket):
         print(f"WebSocket error: {e}")
     finally:
         await websocket.close()
+
 
 @app.get("/time")
 async def get_time(tz: str = "utc"):

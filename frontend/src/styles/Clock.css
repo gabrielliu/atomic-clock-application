@@ -70,3 +70,49 @@
         font-size: 2rem;
     }
 }
+/* Add to your Clock.css file */
+
+/* NTP Status Background Colors */
+.ntp-status-good {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left: 4px solid #28a745;
+}
+
+.ntp-status-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+}
+
+.ntp-status-bad {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.ntp-status-neutral {
+    background-color: rgba(108, 117, 125, 0.1);
+    border-left: 4px solid #6c757d;
+}
+
+/* Status text colors */
+.synced-status {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.not-synced-status {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Connection status colors */
+.status-connected {
+    color: #28a745;
+}
+
+.status-disconnected {
+    color: #dc3545;
+}
+
+.status-error {
+    color: #ffc107;
+}
