@@ -1,0 +1,72 @@
+.clock-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clock-display {
+    font-size: 3rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    color: #2c3e50;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timezone-selector {
+    margin: 1.5rem 0;
+}
+
+.timezone-selector select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.clock-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.info-section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h3 {
+    margin-top: 0;
+    color: #495057;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.info-section p {
+    margin: 0.5rem 0;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .clock-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .clock-display {
+        font-size: 2rem;
+    }
+}
