@@ -1,0 +1,38 @@
+networks:
+  atomic-clock-net:
+    driver: bridge
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - atomic-clock-net
+
+  frontend:
+    build: ./frontend
+    hostname: frontend
+    ports:
+      - "5173:5173"
+    expose:
+      - "5173"
+    networks:
+      - atomic-clock-net
+
+  backend:
+    build: ./backend
+    hostname: backend
+    ports:
+      - "5555:5555"
+    expose:
+      - "5555"
+    networks:
+      - atomic-clock-net
